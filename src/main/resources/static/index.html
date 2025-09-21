@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>URL Shortener & Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center p-4">
+
+<div class="bg-white rounded-2xl shadow-lg p-6 w-full max-w-md">
+    <h1 class="text-2xl font-bold mb-4 text-center">URL Tool</h1>
+
+    <!-- Tabs -->
+    <div class="flex mb-4">
+        <button id="shortenTab" class="flex-1 py-2 px-4 bg-blue-500 text-white rounded-l-xl font-semibold">Shorten URL</button>
+        <button id="analyticsTab" class="flex-1 py-2 px-4 bg-gray-200 text-gray-700 rounded-r-xl font-semibold">Analytics</button>
+    </div>
+
+    <!-- Shorten URL Form -->
+    <div id="shortenForm">
+        <label class="block mb-2 font-medium" for="urlInput">Enter URL</label>
+        <input id="urlInput" type="url" placeholder="https://example.com" class="w-full p-2 border rounded mb-4">
+        <button class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600" onclick="generateShortenedUrl()">Shorten</button>
+
+        <div id="shortenedResult" class="mt-4 text-green-600 font-semibold hidden">
+            Shortened URL:
+            <span id="shortUrl"></span>
+            <button id="copyButton" class="ml-2 bg-gray-300 text-gray-700 px-2 py-1 rounded hover:bg-gray-400">Copy</button>
+        </div>
+    </div>
+
+    <!-- Analytics Form -->
+    <div id="analyticsForm" class="hidden">
+        <label class="block mb-2 font-medium" for="analyticsInput">Enter Shortened URL</label>
+        <input id="analyticsInput" type="url" placeholder="https://yourdomain.com/abc123" class="w-full p-2 border rounded mb-4">
+        <button class="w-full bg-green-500 text-white p-2 rounded hover:bg-green-600" onclick="getAnalytics()">Get Analytics</button>
+
+        <div id="analyticsResult" class="mt-4 text-gray-700 hidden">
+            <p id="analyticsMessage" class="font-semibold"></p>
+        </div>
+    </div>
+
+</div>
+
+<script src="js/main.js"> </script>
+
+</body>
+</html>
